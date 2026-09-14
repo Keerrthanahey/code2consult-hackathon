@@ -1,0 +1,427 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f6faf4;
+  --background-alt: #edf5e3;
+  --foreground: #14301f;
+  --foreground-muted: #547060;
+
+  --green-primary: #57a62c;
+  --green-light: #8dc63f;
+  --green-soft: #d7ecc0;
+  --green-muted: #a9cf7e;
+  --green-dark: #3c7f1d;
+  --green-deep: #1e4712;
+
+  --accent-1: var(--green-dark);
+  --accent-2: var(--green-light);
+  --accent-3: var(--green-deep);
+
+  --surface-solid: #ffffff;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-glass: rgba(246, 250, 244, 0.86);
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-bg-strong: rgba(141, 198, 63, 0.1);
+  --glass-border: rgba(20, 48, 31, 0.1);
+  --glass-border-bright: rgba(63, 127, 29, 0.3);
+
+  --border-subtle: rgba(20, 48, 31, 0.08);
+
+  /* mouse interaction */
+  --glow-disc-core: rgba(141, 198, 63, 0.3);
+  --glow-disc-mid: rgba(87, 166, 44, 0.12);
+  --cursor-ring-border: rgba(60, 127, 29, 0.85);
+  --cursor-ring-shadow:
+    0 0 22px rgba(141, 198, 63, 0.4),
+    inset 0 0 14px rgba(141, 198, 63, 0.18);
+  --cursor-ring-bg: rgba(141, 198, 63, 0.06);
+
+  --scrollbar-thumb: rgba(63, 127, 29, 0.35);
+}
+
+.dark {
+  --background: #0c120e;
+  --background-alt: #101a13;
+  --foreground: #eaf4e8;
+  --foreground-muted: #8fa89a;
+
+  --green-primary: #8dc63f;
+  --green-light: #8dc63f;
+  --green-soft: #16251a;
+  --green-muted: #6f8f7b;
+  --green-dark: #8dc63f;
+  --green-deep: #a9cf7e;
+
+  --accent-1: var(--green-light);
+  --accent-2: var(--green-primary);
+  --accent-3: var(--green-deep);
+
+  --surface-solid: #10171a;
+  --surface: rgba(22, 40, 30, 0.72);
+  --surface-glass: rgba(11, 18, 14, 0.82);
+
+  --glass-bg: rgba(22, 40, 30, 0.5);
+  --glass-bg-strong: rgba(30, 58, 40, 0.35);
+  --glass-border: rgba(234, 244, 232, 0.12);
+  --glass-border-bright: rgba(141, 198, 63, 0.4);
+
+  --border-subtle: rgba(234, 244, 232, 0.09);
+
+  --glow-disc-core: rgba(141, 198, 63, 0.45);
+  --glow-disc-mid: rgba(141, 198, 63, 0.2);
+  --cursor-ring-border: rgba(169, 207, 126, 0.95);
+  --cursor-ring-shadow:
+    0 0 28px rgba(141, 198, 63, 0.55),
+    inset 0 0 18px rgba(141, 198, 63, 0.3);
+  --cursor-ring-bg: rgba(141, 198, 63, 0.1);
+
+  --scrollbar-thumb: rgba(141, 198, 63, 0.45);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--foreground-muted);
+  --color-accent-1: var(--accent-1);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-green-primary: var(--green-primary);
+  --color-green-light: var(--green-light);
+  --color-green-soft: var(--green-soft);
+  --color-green-muted: var(--green-muted);
+  --color-green-dark: var(--green-dark);
+  --color-green-deep: var(--green-deep);
+  --color-surface-solid: var(--surface-solid);
+  --color-surface: var(--surface);
+  --color-surface-glass: var(--surface-glass);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth crossfade when the theme changes (disabled for reduced motion). */
+@media (prefers-reduced-motion: no-preference) {
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+  }
+}
+
+/* Hide the native cursor only where the mouse circle is active:
+   fine pointer + full motion. Keyboard focus stays fully visible. */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: rgba(141, 198, 63, 0.35);
+  color: var(--green-deep);
+}
+
+/* ---------- 180DC mouse circle (theme-aware) ---------- */
+
+.glow-disc {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(
+    circle,
+    var(--glow-disc-core) 0%,
+    var(--glow-disc-mid) 40%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: 2px solid var(--cursor-ring-border);
+  box-shadow: var(--cursor-ring-shadow);
+  background: var(--cursor-ring-bg);
+  pointer-events: none;
+  z-index: 70;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .glow-disc,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* ---------- Logo on dark surfaces ---------- */
+
+.theme-logo {
+  transition: filter 0.3s ease;
+}
+
+.dark .theme-logo {
+  filter: brightness(1.6) saturate(1.15) drop-shadow(0 0 6px rgba(141, 198, 63, 0.3));
+}
+
+/* ---------- Typography helpers ---------- */
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+}
+
+.h-display {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.text-gradient-green {
+  background: linear-gradient(
+    120deg,
+    var(--green-light) 0%,
+    var(--green-primary) 55%,
+    var(--green-deep) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-soft {
+  color: var(--foreground-muted);
+}
+
+/* ---------- Glassmorphism ---------- */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-green {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border-bright);
+}
+
+/* ---------- Section dividers ---------- */
+
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 900px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--glass-border-bright),
+    rgba(141, 198, 63, 0.22),
+    transparent
+  );
+}
+
+.section-glow {
+  position: relative;
+}
+
+.section-glow::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 160px;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(141, 198, 63, 0.24),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3.5s ease-in-out infinite;
+}
+
+/* ---------- Tilt cards ---------- */
+
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 900px;
+  will-change: transform;
+}
+
+.tilt-card-inner {
+  transition: transform 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+
+  .animate-float,
+  .animate-pulse-glow {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tilt-card-inner {
+    transition: none;
+  }
+}
+
+/* ---------- Repository structure ---------- */
+
+.repo-tree-line {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.repo-tree-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--glass-border-bright);
+}
+
+.repo-tree-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1rem;
+  height: 1px;
+  background: var(--glass-border-bright);
+}
+
+/* ---------- PR card ---------- */
+
+.pr-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.pr-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--green-deep),
+    var(--green-primary),
+    var(--green-light)
+  );
+}
