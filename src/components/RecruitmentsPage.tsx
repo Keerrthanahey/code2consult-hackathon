@@ -296,7 +296,7 @@ export default function RecruitmentsContent() {
             className="recruit-cta-group"
           >
             <a
-              href="https://vitc-180dc.org/portal"
+              href="http://localhost:3003/"
               target="_blank"
               rel="noopener noreferrer"
               className="recruit-btn recruit-btn-primary"
@@ -444,7 +444,7 @@ export default function RecruitmentsContent() {
 
                 <div className="recruit-card-footer">
                   <a
-                    href="https://vitc-180dc.org/portal"
+                    href="http://localhost:3003/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="recruit-card-link"
@@ -536,7 +536,7 @@ export default function RecruitmentsContent() {
           business challenges through strategy, innovation, and collaboration.
         </p>
         <a
-          href="https://vitc-180dc.org/portal"
+          href="http://localhost:3003/"
           target="_blank"
           rel="noopener noreferrer"
           className="recruit-btn recruit-btn-large"

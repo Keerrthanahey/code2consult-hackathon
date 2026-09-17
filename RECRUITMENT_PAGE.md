@@ -177,8 +177,8 @@ Key responsive behaviors:
 
 ## Application Portal
 
-Applications are managed through the official recruitment portal:
-- **URL**: https://vitc-180dc.org/portal
+Applications are managed through the local recruitment portal:
+- **URL**: http://localhost:3003/
 - All CTA buttons and links point to this portal
 
 ## Departments & Roles
