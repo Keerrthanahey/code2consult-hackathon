@@ -2,7 +2,7 @@
 
 ## Overview
 
-A premium, responsive recruitment experience for 180 Degrees Consulting VIT Chennai. The page showcases the organization's departments, application process, and available career opportunities in a polished, modern interface designed for both dark and light modes.
+A premium, responsive recruitment experience for 180 Degrees CONSULTing VIT Chennai. The page showcases the organization's departments, application process, and available career opportunities in a polished, modern interface designed for both dark and light modes.
 
 **Route:** `/recruitments`
 
@@ -43,7 +43,7 @@ A premium, responsive recruitment experience for 180 Degrees Consulting VIT Chen
    - Dual CTA buttons (Apply Now, Explore Departments)
 
 2. **Why Join Us Section**
-   - Brief introduction to 180 Degrees Consulting
+   - Brief introduction to 180 Degrees CONSULTing
    - Three highlight cards with icons and descriptions
    - Smooth entrance animations
 
@@ -185,9 +185,9 @@ Applications are managed through the local recruitment portal:
 
 ### Technical
 - Technical Director (Senior) - Closed
-- DevOps Senior Consultant (Senior) - Closed
-- Product Senior Consultant (Senior) - Closed
-- AI/ML Senior Consultant (Senior) - Closed
+- DevOps Senior CONSULTant (Senior) - Closed
+- Product Senior CONSULTant (Senior) - Closed
+- AI/ML Senior CONSULTant (Senior) - Closed
 - Technical Member (Entry) - **Open**
 
 ### Marketing, Operations, Finance, CRM, Business Strategy

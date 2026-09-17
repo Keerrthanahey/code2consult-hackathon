@@ -74,10 +74,10 @@ export default function RegisterContent() {
             BACK TO HOMEPAGE
           </Link>
 
-          <p className="eyebrow">Registration · 180 Degrees Consulting — VIT Chennai</p>
+          <p className="eyebrow">Registration · 180 Degrees CONSULTing — VIT Chennai</p>
           <h1 className="h-display text-4xl sm:text-6xl">
             Register for{" "}
-            <span className="text-gradient-green">Code2Console.</span>
+            <span className="text-gradient-green">Code2Consult.</span>
           </h1>
           <p className="max-w-xl text-lg leading-relaxed text-muted">
             One team. One repository. Eight hours to make it measurably

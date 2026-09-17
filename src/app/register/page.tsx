@@ -4,9 +4,9 @@ import RegisterContent from "@/components/RegisterContent";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Register — CODE2CONSOLE · 180 Degrees Consulting VIT Chennai",
+  title: "Register — Code2Consult · 180 Degrees CONSULTing VIT Chennai",
   description:
-    "Register for Code2Console, the 8-hour open-source hackathon by 180 Degrees Consulting — VIT Chennai. Register your team, receive a real repository, and ship a production-quality Pull Request.",
+    "Register for Code2Consult, the 8-hour open-source hackathon by 180 Degrees CONSULTing — VIT Chennai. Register your team, receive a real repository, and ship a production-quality Pull Request.",
 };
 
 export default function RegisterPage() {

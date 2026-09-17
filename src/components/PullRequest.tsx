@@ -47,7 +47,7 @@ export default function PullRequest() {
               <div>
                 <p className="flex items-center gap-2 font-mono text-xs text-foreground/40">
                   <GitBranch size={12} className="text-accent-1/60" />
-                  CODE2CONSOLE / team-alpha
+                  Code2Consult / team-alpha
                 </p>
                 <p className="font-mono text-sm font-medium text-foreground">
                   feat: optimize campaign analytics

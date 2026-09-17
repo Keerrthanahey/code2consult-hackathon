@@ -38,7 +38,7 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="flex flex-col gap-7"
           >
-            <p className="eyebrow">Why Code2Console exists</p>
+            <p className="eyebrow">Why Code2Consult exists</p>
             <h2 className="h-display text-4xl sm:text-5xl lg:text-6xl">
               Not another disposable{" "}
               <span className="text-gradient-green">hackathon project.</span>
@@ -50,7 +50,7 @@ export default function About() {
               </p>
               <p>
                 <span className="font-semibold text-foreground">
-                  Code2Console runs on the principle consultants live by:
+                  Code2Consult runs on the principle consultants live by:
                 </span>{" "}
                 never rebuild what can be improved. Step into an existing
                 codebase, understand the problem underneath the issue, and make

@@ -1,9 +1,9 @@
 export const SITE = {
-  name: "CODE2CONSOLE",
+  name: "Code2Consult",
   tagline: "DON'T BUILD FROM SCRATCH. IMPROVE WHAT ALREADY EXISTS.",
   description:
     "An 8-hour open-source challenge where participants improve real repositories across consulting-aligned domains and ship meaningful contributions.",
-  organizer: "180 Degrees Consulting VIT Chennai",
+  organizer: "180 Degrees CONSULTing VIT Chennai",
   eventDate: "[EVENT DATE]",
   registrationUrl: "[REGISTRATION LINK]",
   registrationDeadline: "[REGISTRATION DEADLINE]",
@@ -34,7 +34,7 @@ export const STATS = [
   { value: 8, label: "Hour Challenge", suffix: "" },
   { value: 10, label: "Repositories", suffix: "" },
   { value: 10, label: "Issue Types", suffix: "" },
-  { value: 5, label: "Consulting Domains", suffix: "" },
+  { value: 5, label: "CONSULTing Domains", suffix: "" },
 ] as const;
 
 export const HOW_IT_WORKS = [
@@ -362,14 +362,14 @@ export const EVALUATION = [
 
 export const FAQ = [
   {
-    question: "What is Code2Console?",
+    question: "What is Code2Consult?",
     answer:
-      "Code2Console is an 8-hour open-source hackathon where participants improve existing software repositories by solving real-world engineering problems through GitHub issues, pull requests, and production-quality contributions.",
+      "Code2Consult is an 8-hour open-source hackathon where participants improve existing software repositories by solving real-world engineering problems through GitHub issues, pull requests, and production-quality contributions.",
   },
   {
     question: "How is this different from a normal hackathon?",
     answer:
-      "Most hackathons ask you to build something from scratch in 8 hours. Code2Console gives you an existing codebase and asks you to make it better — fix bugs, add features, improve performance, or enhance security. Your work lives on after the event.",
+      "Most hackathons ask you to build something from scratch in 8 hours. Code2Consult gives you an existing codebase and asks you to make it better — fix bugs, add features, improve performance, or enhance security. Your work lives on after the event.",
   },
   {
     question: "What will we actually build?",
@@ -409,7 +409,7 @@ export const FAQ = [
   {
     question: "What is a Pull Request?",
     answer:
-      "A Pull Request (PR) is how you propose changes to a codebase. It's the primary submission format for Code2Console — your PR is what gets evaluated.",
+      "A Pull Request (PR) is how you propose changes to a codebase. It's the primary submission format for Code2Consult — your PR is what gets evaluated.",
   },
   {
     question: "How will submissions be judged?",
@@ -434,7 +434,7 @@ export const FAQ = [
   {
     question: "Where do I register?",
     answer:
-      "Register from the homepage or visit the Register page. Registration links, deadlines and event details are announced on the official Code2Console page.",
+      "Register from the homepage or visit the Register page. Registration links, deadlines and event details are announced on the official Code2Consult page.",
   },
 ];
 

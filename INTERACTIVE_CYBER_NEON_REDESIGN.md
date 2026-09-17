@@ -395,7 +395,7 @@ prefers-reduced-motion: reduce
 ```
 ┌─────────────────────────────────────────┐
 │                                         │
-│     CODE2CONSOLE                        │
+│     Code2Consult                        │
 │     Don't build from scratch            │
 │     Improve what already exists         │
 │                                         │

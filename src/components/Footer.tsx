@@ -71,7 +71,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <Image
                 src="/180dc-logo.png"
-                alt="180 Degrees Consulting VIT Chennai"
+                alt="180 Degrees CONSULTing VIT Chennai"
                 width={129}
                 height={123}
                 className="theme-logo h-12 w-auto select-none"
@@ -79,7 +79,7 @@ export default function Footer() {
               />
               <span className="font-mono text-lg font-bold tracking-tight">
                 CODE2
-                <span className="text-green-dark">CONSOLE</span>
+                <span className="text-green-dark">consult</span>
               </span>
             </div>
             <p className="mt-4 font-mono text-xs tracking-[0.15em] text-foreground/40">
@@ -87,7 +87,7 @@ export default function Footer() {
             </p>
             <p className="mt-3 text-sm leading-relaxed text-foreground/55">
               An open-source improvement challenge organised by 180 Degrees
-              Consulting — VIT Chennai.
+              CONSULTing — VIT Chennai.
             </p>
             <a
               href={REGISTRATION_PATH}
@@ -154,7 +154,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-foreground/10 pt-6 text-center">
           <p className="text-xs text-foreground/25">
-            Code2Console · An engineering challenge by 180 Degrees Consulting,
+            Code2Consult · An engineering challenge by 180 Degrees CONSULTing,
             VIT Chennai
           </p>
         </div>

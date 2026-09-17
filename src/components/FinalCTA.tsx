@@ -34,7 +34,7 @@ export default function FinalCTA() {
               href={REGISTRATION_PATH}
               className="group inline-flex items-center justify-center gap-2 rounded-lg bg-green-dark px-8 py-4 text-lg font-semibold text-background transition-all hover:bg-green-deep hover:shadow-[0_0_44px_rgba(63,127,29,0.4)]"
             >
-              Register for Code2Console
+              Register for Code2Consult
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"
@@ -49,7 +49,7 @@ export default function FinalCTA() {
           </div>
 
           <p className="mt-4 text-xs tracking-wide text-foreground/30">
-            Organised by 180 Degrees Consulting — VIT Chennai
+            Organised by 180 Degrees CONSULTing — VIT Chennai
           </p>
         </motion.div>
       </div>

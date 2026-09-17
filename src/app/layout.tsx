@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CODE2CONSOLE — 8-Hour Open-Source Hackathon",
+  title: "Code2Consult — 8-Hour Open-Source Hackathon",
   description:
     "An 8-hour open-source hackathon where you improve existing software, solve real-world problems, and ship meaningful contributions through production-quality Pull Requests.",
   keywords: [
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     "coding",
     "engineering",
     "pull request",
-    "180 Degrees Consulting",
+    "180 Degrees CONSULTing",
     "VIT Chennai",
   ],
   openGraph: {
-    title: "CODE2CONSOLE — 8-Hour Open-Source Hackathon",
+    title: "Code2Consult — 8-Hour Open-Source Hackathon",
     description:
       "Real Problems. Real Code. Real Impact. Improve existing software in 8 hours.",
     type: "website",

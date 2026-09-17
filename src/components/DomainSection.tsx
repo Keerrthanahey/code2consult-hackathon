@@ -16,7 +16,7 @@ export default function DomainSection() {
           className="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"
         >
           <div className="max-w-2xl">
-            <p className="eyebrow mb-4">Consulting domains</p>
+            <p className="eyebrow mb-4">CONSULTing domains</p>
             <h2 className="h-display text-4xl sm:text-5xl">
               Ten repositories across{" "}
               <span className="text-gradient-green">five domains.</span>

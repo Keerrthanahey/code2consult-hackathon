@@ -71,7 +71,7 @@ export default function Navbar() {
           <Link href="/#home" className="flex items-center gap-3">
             <Image
               src="/180dc-logo.png"
-              alt="180 Degrees Consulting VIT Chennai"
+              alt="180 Degrees CONSULTing VIT Chennai"
               width={129}
               height={123}
               className="theme-logo h-10 w-auto select-none sm:h-11"
@@ -80,7 +80,7 @@ export default function Navbar() {
             />
             <span className="font-mono text-base font-bold tracking-tight text-foreground">
               CODE2
-              <span className="text-neon-cyan">CONSOLE</span>
+              <span className="text-neon-cyan">consult</span>
             </span>
           </Link>
 

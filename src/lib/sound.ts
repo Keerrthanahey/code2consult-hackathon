@@ -25,7 +25,7 @@ function getAudioContext(): AudioContext | null {
     try {
       audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
     } catch (e) {
-      console.error("AudioContext unavailable:", e);
+      consult.error("AudioContext unavailable:", e);
       audioContext = null;
     }
   }

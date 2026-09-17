@@ -216,7 +216,7 @@ Cleaner, more technical approach:
 ### Performance
 - Build time: 1118ms
 - TypeScript check: 2.2s
-- No console errors
+- No consult errors
 - Clean, minimal code
 
 ### Accessibility
@@ -234,7 +234,7 @@ Cleaner, more technical approach:
 ✓ TypeScript: No errors
 ✓ Routes: / /_not-found /register
 ✓ No 404s
-✓ No console errors
+✓ No consult errors
 ✓ Production build clean
 ```
 
@@ -345,7 +345,7 @@ Cleaner, more technical approach:
 ✅ Reduced motion respected  
 ✅ Build succeeds  
 ✅ No TypeScript errors  
-✅ No console errors  
+✅ No consult errors  
 
 ---
 
