@@ -1,366 +1,188 @@
 # Code2Consult Hackathon
 
-A modern web platform built for the **Code2Consult Hackathon**, developed with Next.js, React, TypeScript, Tailwind CSS, Framer Motion, and Lucide React.
+## Introduction
 
-The project provides a structured and interactive web experience for the hackathon, including dedicated pages for registration and recruitment-related content.
+This is a web application developed for the **Code2Consult Hackathon**.
 
-## Live Development
+The project provides a centralized platform for the hackathon, with sections for information, recruitment, registration, and other important event-related content.
 
-The application is currently accessible locally at:
+The website is built with a modern and responsive interface to make it simple for participants and organizers to navigate and access the required information.
 
-**http://localhost:3003/**
+## 🚀 Features
 
-> The port may differ depending on the local development environment. The project can be configured to run on a specific port using the Next.js CLI.
+* 🏠 **Home Page** – Landing page with important hackathon information
+* 📋 **Recruitments** – Recruitment-related information and opportunities
+* 📝 **Registration** – Registration page for participants
+* 📱 **Responsive UI** – Works across different screen sizes
+* ✨ **Animations** – Smooth UI animations using Framer Motion
+* 🎨 **Modern Interface** – Clean and interactive design
+* 🔗 **Easy Navigation** – Navigation between different sections of the website
 
----
+## 📖 Documentation
 
-## Tech Stack
+Project documentation and additional information can be added here.
 
-### Frontend
+For development-related information, refer to the source code and project structure in this repository.
 
-* **Next.js 16.3.5** — React framework using the App Router
-* **React 19.1.0**
-* **TypeScript 5.9**
-* **Tailwind CSS 4**
-* **Framer Motion 12** — animations and interactions
-* **Lucide React** — icon library
-* **next-themes** — theme management
-* **clsx** — conditional class utilities
-* **tailwind-merge** — Tailwind class merging
+## ⚙️ Prerequisites
 
-### Development Tools
+Before running the project, make sure you have:
 
-* ESLint
-* PostCSS
-* pnpm
-* TypeScript
+* **Node.js**
+* **pnpm**
+* A code editor such as **VS Code**
+* Git
 
-The versions and dependencies are defined in the project's `package.json`.
+## 🧱 Tech Stack
 
----
+| Layer           | Technology      |
+| --------------- | --------------- |
+| Frontend        | Next.js + React |
+| Language        | TypeScript      |
+| Styling         | Tailwind CSS    |
+| Animations      | Framer Motion   |
+| Icons           | Lucide React    |
+| Package Manager | pnpm            |
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 code2consult-hackathon/
 │
 ├── public/
-│   └── Static assets
 │
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx
-│   │   ├── layout.tsx
-│   │   ├── providers.tsx
-│   │   ├── globals.css
-│   │   │
 │   │   ├── recruitments/
-│   │   │   └── ...
-│   │   │
-│   │   └── register/
-│   │       └── ...
+│   │   ├── register/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
 │   │
 │   ├── components/
-│   │   └── Reusable UI components
-│   │
 │   ├── data/
-│   │   └── Application and page data
-│   │
 │   └── lib/
-│       └── Shared utilities
 │
-├── RECRUITMENT_PAGE.md
-├── eslint.config.mjs
-├── next.config.ts
 ├── package.json
 ├── pnpm-lock.yaml
-├── pnpm-workspace.yaml
+├── next.config.ts
 ├── postcss.config.mjs
 ├── tsconfig.json
+├── eslint.config.mjs
 └── README.md
 ```
 
-The repository uses a `src`-based application structure with separate directories for the App Router, reusable components, data, and utility code.
+## 🌐 Pages
 
----
+### Home
 
-## Application Routes
-
-The project currently contains the following main application areas:
-
-| Route           | Purpose                  |
-| --------------- | ------------------------ |
-| `/`             | Main landing page        |
-| `/recruitments` | Recruitment-related page |
-| `/register`     | Registration page        |
-
-The corresponding route directories are present under `src/app`.
-
----
-
-## Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Keerrthanahey/code2consult-hackathon.git
-cd code2consult-hackathon
-```
-
-### 2. Install dependencies
-
-Using pnpm:
-
-```bash
-pnpm install
-```
-
-### 3. Start the development server
-
-```bash
-pnpm dev
-```
-
-Next.js uses `next dev` for the development server.
-
-If you want to run it specifically on port `3003`:
-
-```bash
-pnpm dev -- -p 3003
-```
-
-Then open:
+The main landing page of the hackathon website.
 
 ```text
-http://localhost:3003/
+/
 ```
 
----
+### Recruitments
 
-## Available Scripts
-
-The project currently defines these scripts in `package.json`:
-
-### Development
-
-```bash
-pnpm dev
-```
-
-Starts the Next.js development server.
-
-### Production Build
-
-```bash
-pnpm build
-```
-
-Creates an optimized production build.
-
-### Production Server
-
-```bash
-pnpm start
-```
-
-Starts the application after a successful production build.
-
-### Lint
-
-```bash
-pnpm lint
-```
-
-Runs ESLint against the project.
-
-These correspond to the standard Next.js development, build, production, and lint workflow.
-
----
-
-## Development Workflow
-
-A typical development workflow is:
-
-```bash
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
-
-# Check linting
-pnpm lint
-
-# Create production build
-pnpm build
-
-# Start production server
-pnpm start
-```
-
-For local development, the application can be opened at:
+Contains recruitment-related information.
 
 ```text
-http://localhost:3003/
+/recruitments
 ```
 
----
+### Registration
 
-## Styling & UI
-
-The project uses **Tailwind CSS** alongside global CSS and reusable React components.
-
-The main global styling entry point is:
-
-```text
-src/app/globals.css
-```
-
-The project also uses:
-
-* **Framer Motion** for animations
-* **Lucide React** for interface icons
-* **next-themes** for theme-related functionality
-* **clsx** and **tailwind-merge** for flexible styling
-
-These dependencies are declared in `package.json`.
-
----
-
-## Recruitment Page
-
-The repository includes a dedicated recruitment experience under:
-
-```text
-src/app/recruitments/
-```
-
-Additional recruitment documentation is maintained in:
-
-```text
-RECRUITMENT_PAGE.md
-```
-
-This keeps the recruitment-specific implementation and documentation organized separately from the main landing page.
-
----
-
-## Registration
-
-The project also contains a dedicated registration route:
+Participant registration page.
 
 ```text
 /register
 ```
 
-Its implementation is located under:
+## ▶️ Running the Project
 
-```text
-src/app/register/
-```
-
----
-
-## Configuration
-
-Important project configuration files include:
-
-```text
-next.config.ts
-tsconfig.json
-eslint.config.mjs
-postcss.config.mjs
-pnpm-workspace.yaml
-```
-
-The project is configured as a private Next.js application and uses TypeScript, ESLint, Tailwind CSS, and the Next.js App Router.
-
----
-
-## Deployment
-
-The application can be built for production using:
+### 1. Clone the Repository
 
 ```bash
-pnpm build
+git clone https://github.com/Keerrthanahey/code2consult-hackathon.git
 ```
 
-and started using:
+### 2. Navigate to the Project
 
 ```bash
-pnpm start
+cd code2consult-hackathon
 ```
 
-Next.js supports deployment as a Node.js server, Docker container, static export where applicable, and platform-specific adapters. The exact deployment configuration depends on the target hosting platform.
-
----
-
-## Contributing
-
-Contributions are welcome.
-
-### Suggested workflow
-
-1. Fork the repository.
-2. Create a feature branch.
+### 3. Install Dependencies
 
 ```bash
-git checkout -b feature/your-feature
+pnpm install
 ```
 
-3. Make your changes.
-4. Run linting:
-
-```bash
-pnpm lint
-```
-
-5. Verify the application locally:
+### 4. Start the Development Server
 
 ```bash
 pnpm dev
 ```
 
-6. Create a production build to check for build issues:
+The application can then be accessed at:
+
+```text
+http://localhost:3003/
+```
+
+## 🛠️ Available Commands
+
+### Start Development Server
+
+```bash
+pnpm dev
+```
+
+### Build the Project
 
 ```bash
 pnpm build
 ```
 
-7. Commit your changes:
+### Start Production Server
 
 ```bash
-git add .
-git commit -m "feat: add your feature"
+pnpm start
 ```
 
-8. Push the branch:
+### Run Linter
 
 ```bash
-git push origin feature/your-feature
+pnpm lint
 ```
 
-9. Open a pull request.
+## 🔄 Development
 
----
+The project is currently under development for the **Code2Consult Hackathon**.
 
-## Repository
+Developers can contribute by:
+
+1. Creating a branch for their changes
+2. Making the required changes
+3. Testing the application locally
+4. Committing the changes
+5. Creating a pull request
+
+## 📌 Project Status
+
+🚧 **Under Development**
+
+The website is being actively developed and additional features may be added as the hackathon progresses.
+
+## 🔗 Repository
 
 **GitHub:**
 https://github.com/Keerrthanahey/code2consult-hackathon
 
----
+## 👥 Contributors
 
-## Project Status
-
-**Code2Consult Hackathon — Active Development**
-
-The project is currently being developed and refined for the hackathon.
+Developed and maintained by the **Code2Consult Hackathon Team**.
 
 ---
-
-## License
-
-No explicit license is currently specified in the repository.
 
 If this project is intended to be distributed publicly, add an appropriate `LICENSE` file to the repository.
