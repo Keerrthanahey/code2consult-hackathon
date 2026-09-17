@@ -29,6 +29,7 @@ export default function MouseGlow() {
     const onLeave = () => {
       visible = false;
       interactive = false;
+      ring.classList.remove("interactive");
     };
     const onMove = (e: MouseEvent) => {
       targetX = e.clientX;
@@ -37,16 +38,22 @@ export default function MouseGlow() {
     };
     const onOver = (e: MouseEvent) => {
       const t = e.target as Element | null;
-      interactive = !!t?.closest(
+      const isInteractive = !!t?.closest(
         "a, button, [role='button'], input, textarea, select, [data-spotlight]"
       );
+      interactive = isInteractive;
+      if (isInteractive) {
+        ring.classList.add("interactive");
+      } else {
+        ring.classList.remove("interactive");
+      }
     };
 
     const loop = () => {
       currentX += (targetX - currentX) * 0.16;
       currentY += (targetY - currentY) * 0.16;
 
-      const scale = interactive ? 1.35 : 1;
+      const scale = interactive ? 1.3 : 1;
       const x = currentX;
       const y = currentY;
 
@@ -55,8 +62,8 @@ export default function MouseGlow() {
       glow.style.opacity = visible ? "1" : "0";
       ring.style.opacity = visible
         ? interactive
-          ? "0.9"
-          : "0.5"
+          ? "0.85"
+          : "0.6"
         : "0";
 
       raf = requestAnimationFrame(loop);

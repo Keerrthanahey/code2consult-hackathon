@@ -1,43 +1,43 @@
 /* ========== RECRUITMENT PAGE THEME VARIABLES ========== */
 
 :root {
-  /* Light mode recruitment variables */
-  --recruit-bg: #f6faf4;
-  --recruit-surface-primary: #ffffff;
-  --recruit-surface-secondary: rgba(237, 245, 227, 0.72);
-  --recruit-border: rgba(20, 48, 31, 0.1);
-  --recruit-border-bright: rgba(63, 127, 29, 0.25);
-  --recruit-text-primary: #14301f;
-  --recruit-text-secondary: #547060;
-  --recruit-text-muted: #8fa89a;
-  --recruit-accent-glow: rgba(141, 198, 63, 0.15);
-  --recruit-badge-bg: rgba(141, 198, 63, 0.12);
-  --recruit-badge-border: rgba(87, 166, 44, 0.3);
-  --recruit-card-shadow: 0 8px 32px rgba(20, 48, 31, 0.08);
-  --recruit-card-hover-shadow: 0 20px 48px rgba(20, 48, 31, 0.16);
-  --recruit-glow-start: rgba(141, 198, 63, 0.25);
-  --recruit-glow-end: rgba(141, 198, 63, 0.05);
-  --recruit-hero-accent: rgba(87, 166, 44, 0.08);
+  /* Neon recruitment variables - Cyber theme */
+  --recruit-bg: #050508;
+  --recruit-surface-primary: rgba(15, 15, 26, 0.6);
+  --recruit-surface-secondary: rgba(15, 15, 26, 0.8);
+  --recruit-border: rgba(0, 245, 255, 0.15);
+  --recruit-border-bright: rgba(0, 245, 255, 0.3);
+  --recruit-text-primary: #e8e8f0;
+  --recruit-text-secondary: #a8a8b8;
+  --recruit-text-muted: #7a7a8a;
+  --recruit-accent-glow: rgba(0, 245, 255, 0.15);
+  --recruit-badge-bg: rgba(0, 245, 255, 0.08);
+  --recruit-badge-border: rgba(0, 245, 255, 0.3);
+  --recruit-card-shadow: 0 8px 24px rgba(0, 245, 255, 0.1);
+  --recruit-card-hover-shadow: 0 12px 40px rgba(0, 245, 255, 0.25);
+  --recruit-glow-start: rgba(0, 245, 255, 0.3);
+  --recruit-glow-end: rgba(0, 245, 255, 0.05);
+  --recruit-hero-accent: rgba(0, 245, 255, 0.06);
 }
 
 .dark {
-  /* Dark mode recruitment variables */
-  --recruit-bg: #0c120e;
-  --recruit-surface-primary: rgba(22, 40, 30, 0.5);
-  --recruit-surface-secondary: rgba(16, 23, 18, 0.8);
-  --recruit-border: rgba(234, 244, 232, 0.08);
-  --recruit-border-bright: rgba(141, 198, 63, 0.35);
-  --recruit-text-primary: #eaf4e8;
-  --recruit-text-secondary: #8fa89a;
-  --recruit-text-muted: #6f8f7b;
-  --recruit-accent-glow: rgba(141, 198, 63, 0.25);
-  --recruit-badge-bg: rgba(141, 198, 63, 0.15);
-  --recruit-badge-border: rgba(141, 198, 63, 0.4);
-  --recruit-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --recruit-card-hover-shadow: 0 20px 48px rgba(141, 198, 63, 0.2);
-  --recruit-glow-start: rgba(141, 198, 63, 0.35);
-  --recruit-glow-end: rgba(141, 198, 63, 0.08);
-  --recruit-hero-accent: rgba(141, 198, 63, 0.1);
+  /* Dark mode uses same neon colors */
+  --recruit-bg: #050508;
+  --recruit-surface-primary: rgba(15, 15, 26, 0.6);
+  --recruit-surface-secondary: rgba(15, 15, 26, 0.8);
+  --recruit-border: rgba(0, 245, 255, 0.15);
+  --recruit-border-bright: rgba(0, 245, 255, 0.3);
+  --recruit-text-primary: #e8e8f0;
+  --recruit-text-secondary: #a8a8b8;
+  --recruit-text-muted: #7a7a8a;
+  --recruit-accent-glow: rgba(0, 245, 255, 0.15);
+  --recruit-badge-bg: rgba(0, 245, 255, 0.08);
+  --recruit-badge-border: rgba(0, 245, 255, 0.3);
+  --recruit-card-shadow: 0 8px 24px rgba(0, 245, 255, 0.1);
+  --recruit-card-hover-shadow: 0 12px 40px rgba(0, 245, 255, 0.25);
+  --recruit-glow-start: rgba(0, 245, 255, 0.3);
+  --recruit-glow-end: rgba(0, 245, 255, 0.05);
+  --recruit-hero-accent: rgba(0, 245, 255, 0.06);
 }
 
 /* ========== BASE STYLES ========== */
@@ -157,9 +157,9 @@
 .recruit-gradient {
   background: linear-gradient(
     120deg,
-    var(--green-light) 0%,
-    var(--green-primary) 55%,
-    var(--green-deep) 100%
+    #00f5ff 0%,
+    #40ffff 55%,
+    #8b5cff 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -202,26 +202,29 @@
 }
 
 .recruit-btn-primary {
-  background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
-  color: white;
-  box-shadow: 0 8px 24px rgba(63, 127, 29, 0.3);
+  background: transparent;
+  border: 1.5px solid #00f5ff;
+  color: #00f5ff;
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.3);
 }
 
 .recruit-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(63, 127, 29, 0.4);
+  box-shadow: 0 0 24px rgba(0, 245, 255, 0.5);
+  background: rgba(0, 245, 255, 0.05);
 }
 
 .recruit-btn-secondary {
-  background: var(--recruit-surface-primary);
-  color: var(--recruit-text-primary);
+  background: transparent;
+  color: #00f5ff;
   border: 1.5px solid var(--recruit-border-bright);
 }
 
 .recruit-btn-secondary:hover {
-  background: var(--recruit-hero-accent);
-  border-color: var(--accent-1);
+  background: rgba(0, 245, 255, 0.05);
+  border-color: #00f5ff;
   transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.3);
 }
 
 .recruit-btn-large {
@@ -346,8 +349,8 @@
   font-weight: 700;
   background: linear-gradient(
     135deg,
-    var(--green-primary) 0%,
-    var(--green-light) 100%
+    #00f5ff 0%,
+    #40ffff 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

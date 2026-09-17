@@ -62,8 +62,8 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "border-b border-green-soft bg-surface-glass backdrop-blur-2xl shadow-[0_8px_40px_rgba(63,127,29,0.16)]"
-            : "border-b border-transparent bg-transparent"
+            ? "border-b border-neon-cyan/30 bg-surface-glass backdrop-blur-xl shadow-[0_8px_20px_rgba(0,245,255,0.1)]"
+            : "border-b border-neon-cyan/10 bg-transparent"
         )}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
@@ -75,10 +75,11 @@ export default function Navbar() {
               height={123}
               className="theme-logo h-10 w-auto select-none sm:h-11"
               draggable={false}
+              priority
             />
             <span className="font-mono text-base font-bold tracking-tight text-foreground">
               CODE2
-              <span className="text-green-dark">CONSOLE</span>
+              <span className="text-neon-cyan">CONSOLE</span>
             </span>
           </Link>
 
@@ -88,10 +89,10 @@ export default function Navbar() {
                 key={link.href}
                 href={toSection(link.href)}
                 className={cn(
-                  "text-sm font-medium transition-colors",
+                  "text-sm font-medium transition-all duration-300",
                   active === link.href
-                    ? "text-green-dark"
-                    : "text-muted hover:text-foreground"
+                    ? "text-neon-cyan border-b-2 border-neon-cyan pb-1"
+                    : "text-foreground-muted hover:text-neon-cyan"
                 )}
               >
                 {link.label}
@@ -103,7 +104,7 @@ export default function Navbar() {
             <ThemeToggle />
             <a
               href={REGISTRATION_PATH}
-              className="group inline-flex items-center gap-2 rounded-lg bg-green-dark px-5 py-2.5 text-sm font-semibold text-background transition-all hover:bg-green-deep hover:shadow-[0_0_28px_rgba(63,127,29,0.4)]"
+              className="group inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-all duration-300 border border-neon-cyan/50 hover:border-neon-cyan bg-transparent hover:bg-neon-cyan/5 text-neon-cyan hover:shadow-[0_0_20px_rgba(0,245,255,0.4)]"
             >
               Register
               <ArrowRight
@@ -117,7 +118,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="relative z-50 p-2 text-foreground"
+              className="relative z-50 p-2 text-foreground transition-colors hover:text-neon-cyan"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
             >
@@ -134,7 +135,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-surface-glass backdrop-blur-2xl lg:hidden"
+            className="fixed inset-0 z-40 bg-surface-glass backdrop-blur-xl border-t border-neon-cyan/20 lg:hidden"
           >
             <div className="flex flex-col items-start gap-1 px-8 pt-28">
               <AnimatePresence>
@@ -146,7 +147,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
                     transition={{ delay: i * 0.05, duration: 0.3 }}
-                    className="w-full border-b border-foreground/10 py-4 text-xl font-medium text-foreground/80 transition-colors hover:text-green-dark"
+                    className="w-full border-b border-neon-cyan/10 py-4 text-xl font-medium text-foreground transition-colors hover:text-neon-cyan"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
@@ -158,7 +159,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.3 }}
-                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-dark px-6 py-4 text-lg font-semibold text-background"
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 px-6 py-4 text-lg font-semibold transition-all border border-neon-cyan/50 bg-transparent hover:bg-neon-cyan/5 text-neon-cyan hover:shadow-[0_0_20px_rgba(0,245,255,0.4)]"
                 onClick={() => setMobileOpen(false)}
               >
                 Register <ArrowRight size={18} />
