@@ -28,7 +28,6 @@ export const NAV_LINKS = [
   { label: "Timeline", href: "#timeline" },
   { label: "Evaluation", href: "#evaluation" },
   { label: "FAQ", href: "#faq" },
-  { label: "Recruitment", href: "/recruitments" },
 ] as const;
 
 export const STATS = [
