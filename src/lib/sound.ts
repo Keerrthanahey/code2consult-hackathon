@@ -1,7 +1,7 @@
 /**
- * AUDIBLE CYBER CLICK SOUND UTILITY
- * Uses Web Audio API to generate a loud, clear cyber beep
- * Respects browser autoplay restrictions
+ * Premium Cyber UI Click Sound
+ * Short, crisp, digital - 50-80ms
+ * Web Audio API synthesis
  */
 
 let audioContext: AudioContext | null = null;
@@ -34,85 +34,62 @@ function getAudioContext(): AudioContext | null {
 }
 
 /**
- * LOUD, AUDIBLE cyber beep sound
- * - 120ms duration
- * - Frequency sweep: 1500Hz → 900Hz (pitch drop)
- * - 15% volume (LOUD - clearly audible)
- * - Fast attack, quick decay
+ * PREMIUM CYBER CLICK
+ * - 60ms duration
+ * - Frequency: 2000Hz → 1200Hz (pitch drop)
+ * - Very short, crisp, high-frequency transient
+ * - 8% volume (subtle but audible)
  */
 export function playClickSound() {
   ensureInit();
   if (!soundEnabled) return;
 
   const ctx = getAudioContext();
-  if (!ctx) {
-    console.warn("AudioContext not available");
-    return;
-  }
+  if (!ctx) return;
 
   try {
-    // Resume audio context if suspended (required by browser autoplay policy)
     if (ctx.state === "suspended") {
-      ctx.resume().catch(() => {
-        /* ignore */
-      });
+      ctx.resume().catch(() => {});
     }
 
     const now = ctx.currentTime;
-    const duration = 0.12; // 120ms - long enough to be clearly audible
+    const duration = 0.06; // 60ms - premium UI click
 
-    // PRIMARY OSCILLATOR - Main beep tone
-    const osc1 = ctx.createOscillator();
-    const gain1 = ctx.createGain();
+    // HIGH-FREQUENCY TRANSIENT (main click character)
+    const transient = ctx.createOscillator();
+    const transientGain = ctx.createGain();
 
-    osc1.connect(gain1);
-    gain1.connect(ctx.destination);
+    transient.connect(transientGain);
+    transientGain.connect(ctx.destination);
 
-    osc1.type = "sine";
-    osc1.frequency.setValueAtTime(1500, now); // Start high: 1500Hz
-    osc1.frequency.exponentialRampToValueAtTime(900, now + duration * 0.7); // Sweep down
+    transient.type = "sine";
+    transient.frequency.setValueAtTime(2500, now); // Very high start
+    transient.frequency.exponentialRampToValueAtTime(1200, now + duration); // Quick drop
 
-    gain1.gain.setValueAtTime(0.15, now); // LOUD: 15% volume
-    gain1.gain.exponentialRampToValueAtTime(0.02, now + duration); // Decay to quiet
+    transientGain.gain.setValueAtTime(0.08, now); // 8% volume
+    transientGain.gain.exponentialRampToValueAtTime(0.001, now + duration); // Fast decay
 
-    osc1.start(now);
-    osc1.stop(now + duration);
+    transient.start(now);
+    transient.stop(now + duration);
 
-    // SECONDARY HARMONIC - Add richness/brightness
-    const osc2 = ctx.createOscillator();
-    const gain2 = ctx.createGain();
+    // SUBTLE HARMONIC (adds texture)
+    const harmonic = ctx.createOscillator();
+    const harmonicGain = ctx.createGain();
 
-    osc2.connect(gain2);
-    gain2.connect(ctx.destination);
+    harmonic.connect(harmonicGain);
+    harmonicGain.connect(ctx.destination);
 
-    osc2.type = "sine";
-    osc2.frequency.setValueAtTime(3000, now); // High harmonic: 3000Hz
-    osc2.frequency.exponentialRampToValueAtTime(1800, now + duration * 0.7);
+    harmonic.type = "triangle";
+    harmonic.frequency.setValueAtTime(4000, now); // Very high harmonic
+    harmonic.frequency.exponentialRampToValueAtTime(2400, now + duration * 0.7);
 
-    gain2.gain.setValueAtTime(0.08, now); // 8% volume
-    gain2.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    harmonicGain.gain.setValueAtTime(0.03, now); // Subtle
+    harmonicGain.gain.exponentialRampToValueAtTime(0, now + duration);
 
-    osc2.start(now);
-    osc2.stop(now + duration);
-
-    // Optional: Add a subtle click/attack transient
-    const clickOsc = ctx.createOscillator();
-    const clickGain = ctx.createGain();
-
-    clickOsc.connect(clickGain);
-    clickGain.connect(ctx.destination);
-
-    clickOsc.type = "triangle";
-    clickOsc.frequency.setValueAtTime(2200, now);
-
-    clickGain.gain.setValueAtTime(0.12, now);
-    clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.02); // Quick click: 20ms
-
-    clickOsc.start(now);
-    clickOsc.stop(now + 0.02);
+    harmonic.start(now);
+    harmonic.stop(now + duration);
   } catch (e) {
-    console.error("Error playing click sound:", e);
-    /* audio generation must never break the UI */
+    /* silently fail */
   }
 }
 
@@ -126,9 +103,7 @@ export function setSoundEnabled(value: boolean) {
   soundEnabled = value;
   try {
     window.localStorage.setItem("c2c-sound", value ? "on" : "off");
-  } catch {
-    /* persist is best-effort */
-  }
+  } catch {}
 }
 
 export function toggleSound(): boolean {
