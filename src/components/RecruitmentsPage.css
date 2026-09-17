@@ -1,0 +1,869 @@
+/* ========== RECRUITMENT PAGE THEME VARIABLES ========== */
+
+:root {
+  /* Light mode recruitment variables */
+  --recruit-bg: #f6faf4;
+  --recruit-surface-primary: #ffffff;
+  --recruit-surface-secondary: rgba(237, 245, 227, 0.72);
+  --recruit-border: rgba(20, 48, 31, 0.1);
+  --recruit-border-bright: rgba(63, 127, 29, 0.25);
+  --recruit-text-primary: #14301f;
+  --recruit-text-secondary: #547060;
+  --recruit-text-muted: #8fa89a;
+  --recruit-accent-glow: rgba(141, 198, 63, 0.15);
+  --recruit-badge-bg: rgba(141, 198, 63, 0.12);
+  --recruit-badge-border: rgba(87, 166, 44, 0.3);
+  --recruit-card-shadow: 0 8px 32px rgba(20, 48, 31, 0.08);
+  --recruit-card-hover-shadow: 0 20px 48px rgba(20, 48, 31, 0.16);
+  --recruit-glow-start: rgba(141, 198, 63, 0.25);
+  --recruit-glow-end: rgba(141, 198, 63, 0.05);
+  --recruit-hero-accent: rgba(87, 166, 44, 0.08);
+}
+
+.dark {
+  /* Dark mode recruitment variables */
+  --recruit-bg: #0c120e;
+  --recruit-surface-primary: rgba(22, 40, 30, 0.5);
+  --recruit-surface-secondary: rgba(16, 23, 18, 0.8);
+  --recruit-border: rgba(234, 244, 232, 0.08);
+  --recruit-border-bright: rgba(141, 198, 63, 0.35);
+  --recruit-text-primary: #eaf4e8;
+  --recruit-text-secondary: #8fa89a;
+  --recruit-text-muted: #6f8f7b;
+  --recruit-accent-glow: rgba(141, 198, 63, 0.25);
+  --recruit-badge-bg: rgba(141, 198, 63, 0.15);
+  --recruit-badge-border: rgba(141, 198, 63, 0.4);
+  --recruit-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --recruit-card-hover-shadow: 0 20px 48px rgba(141, 198, 63, 0.2);
+  --recruit-glow-start: rgba(141, 198, 63, 0.35);
+  --recruit-glow-end: rgba(141, 198, 63, 0.08);
+  --recruit-hero-accent: rgba(141, 198, 63, 0.1);
+}
+
+/* ========== BASE STYLES ========== */
+
+.recruit-page {
+  width: 100%;
+  background: var(--recruit-bg);
+  color: var(--recruit-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.recruit-page section {
+  scroll-margin-top: 88px;
+}
+
+/* ========== HERO SECTION ========== */
+
+.recruit-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6rem 1.25rem 4rem;
+  margin-top: 64px;
+}
+
+.recruit-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.recruit-hero-bg::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  background: rgba(141, 198, 63, 0.15);
+  filter: blur(120px);
+  top: 20%;
+  left: -10%;
+  z-index: 1;
+}
+
+.recruit-hero-bg::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 9999px;
+  background: rgba(141, 198, 63, 0.08);
+  filter: blur(110px);
+  bottom: 0;
+  right: -5%;
+  z-index: 1;
+}
+
+.dark .recruit-hero-bg::before {
+  background: rgba(141, 198, 63, 0.2);
+}
+
+.dark .recruit-hero-bg::after {
+  background: rgba(141, 198, 63, 0.12);
+}
+
+.recruit-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ========== RECRUITMENT BADGE ========== */
+
+.recruit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--recruit-badge-bg);
+  border: 1px solid var(--recruit-badge-border);
+  border-radius: 9999px;
+  width: fit-content;
+  margin: 0 auto;
+  color: var(--recruit-text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.recruit-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-1);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ========== HERO HEADING ========== */
+
+.recruit-hero-heading {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--recruit-text-primary);
+}
+
+.recruit-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--green-light) 0%,
+    var(--green-primary) 55%,
+    var(--green-deep) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== HERO DESCRIPTION ========== */
+
+.recruit-hero-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--recruit-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========== CTA BUTTONS ========== */
+
+.recruit-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.recruit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.recruit-btn-primary {
+  background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+  color: white;
+  box-shadow: 0 8px 24px rgba(63, 127, 29, 0.3);
+}
+
+.recruit-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(63, 127, 29, 0.4);
+}
+
+.recruit-btn-secondary {
+  background: var(--recruit-surface-primary);
+  color: var(--recruit-text-primary);
+  border: 1.5px solid var(--recruit-border-bright);
+}
+
+.recruit-btn-secondary:hover {
+  background: var(--recruit-hero-accent);
+  border-color: var(--accent-1);
+  transform: translateY(-2px);
+}
+
+.recruit-btn-large {
+  padding: 1.25rem 3rem;
+  font-size: 1.125rem;
+}
+
+.recruit-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.recruit-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ========== INTRO SECTION ========== */
+
+.recruit-intro-section {
+  padding: 6rem 1.25rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.recruit-intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recruit-section-heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--recruit-text-primary);
+  text-align: center;
+}
+
+.recruit-section-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--recruit-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.recruit-intro-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.recruit-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--recruit-surface-primary);
+  border: 1px solid var(--recruit-border);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.recruit-highlight-item:hover {
+  background: var(--recruit-hero-accent);
+  border-color: var(--recruit-border-bright);
+  transform: translateY(-4px);
+  box-shadow: var(--recruit-card-shadow);
+}
+
+.recruit-highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  background: var(--recruit-accent-glow);
+  border-radius: 0.5rem;
+  color: var(--accent-1);
+  flex-shrink: 0;
+}
+
+.recruit-highlight-text {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--recruit-text-primary);
+}
+
+/* ========== STATS SECTION ========== */
+
+.recruit-stats-section {
+  padding: 6rem 1.25rem;
+  border-top: 1px solid var(--recruit-border);
+  border-bottom: 1px solid var(--recruit-border);
+  background: linear-gradient(
+    180deg,
+    var(--recruit-bg) 0%,
+    var(--recruit-hero-accent) 100%
+  );
+}
+
+.recruit-stats-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem 2rem;
+  text-align: center;
+}
+
+.recruit-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.recruit-stat-value {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    var(--green-primary) 0%,
+    var(--green-light) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.recruit-stat-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--recruit-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* ========== DEPARTMENTS SECTION ========== */
+
+.recruit-departments-section {
+  padding: 6rem 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.recruit-departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.recruit-department-card-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.recruit-tilt-card {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.recruit-card-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--recruit-glow-start), var(--recruit-glow-end));
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.recruit-department-card {
+  width: 100%;
+  padding: 2rem;
+  background: var(--recruit-surface-primary);
+  border: 1px solid var(--recruit-border);
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--recruit-card-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.recruit-department-card:hover {
+  box-shadow: var(--recruit-card-hover-shadow);
+  border-color: var(--recruit-border-bright);
+  background: var(--recruit-surface-secondary);
+}
+
+.recruit-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.recruit-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  width: 56px;
+  height: 56px;
+  background: var(--recruit-accent-glow);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.recruit-department-card:hover .recruit-card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.recruit-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--recruit-text-primary);
+}
+
+.recruit-card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--recruit-text-secondary);
+}
+
+.recruit-card-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recruit-roles-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--recruit-text-muted);
+}
+
+.recruit-roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recruit-role-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--recruit-hero-accent);
+  border: 1px solid var(--recruit-border);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.recruit-role-item:hover {
+  border-color: var(--recruit-border-bright);
+  background: var(--recruit-accent-glow);
+}
+
+.recruit-role-item.open {
+  background: rgba(141, 198, 63, 0.08);
+  border-color: rgba(141, 198, 63, 0.3);
+}
+
+.recruit-role-item.open:hover {
+  background: rgba(141, 198, 63, 0.15);
+  border-color: rgba(141, 198, 63, 0.5);
+}
+
+.recruit-role-name {
+  font-weight: 600;
+  color: var(--recruit-text-primary);
+}
+
+.recruit-role-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--recruit-text-muted);
+  padding: 0.25rem 0.75rem;
+  background: var(--recruit-surface-primary);
+  border-radius: 9999px;
+  border: 1px solid var(--recruit-border);
+}
+
+.recruit-role-item.open .recruit-role-status {
+  background: rgba(141, 198, 63, 0.15);
+  color: var(--green-dark);
+  border-color: rgba(141, 198, 63, 0.3);
+}
+
+.recruit-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--recruit-border);
+}
+
+.recruit-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-1);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.recruit-card-link:hover {
+  gap: 0.75rem;
+  color: var(--green-primary);
+}
+
+/* ========== AGENDA/TIMELINE SECTION ========== */
+
+.recruit-agenda-section {
+  padding: 6rem 1.25rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.recruit-agenda-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.recruit-timeline-item {
+  display: flex;
+  justify-content: center;
+}
+
+.recruit-timeline-item.left {
+  justify-content: flex-end;
+}
+
+.recruit-timeline-item.right {
+  justify-content: flex-start;
+}
+
+.recruit-timeline-card {
+  width: 100%;
+  max-width: 280px;
+  padding: 1.75rem;
+  background: var(--recruit-surface-primary);
+  border: 1px solid var(--recruit-border);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.recruit-timeline-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--recruit-border-bright);
+  box-shadow: var(--recruit-card-hover-shadow);
+}
+
+.recruit-timeline-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--recruit-accent-glow);
+  border-radius: 0.5rem;
+  color: var(--accent-1);
+}
+
+.recruit-timeline-time {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--recruit-text-primary);
+}
+
+.recruit-timeline-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--recruit-text-secondary);
+}
+
+/* ========== APPLICATION STATUS SECTION ========== */
+
+.recruit-status-section {
+  margin: 6rem 1.25rem;
+  padding: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--recruit-surface-primary);
+  border: 1px solid var(--recruit-border);
+  border-radius: 1.5rem;
+}
+
+.recruit-status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.recruit-status-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--recruit-text-secondary);
+}
+
+.recruit-status-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.recruit-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.recruit-indicator-dot {
+  display: inline-flex;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--green-primary);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.recruit-indicator.closed .recruit-indicator-dot {
+  background: var(--recruit-text-muted);
+  animation: none;
+}
+
+.recruit-indicator {
+  color: var(--recruit-text-primary);
+}
+
+.recruit-indicator.closed {
+  color: var(--recruit-text-muted);
+}
+
+/* ========== FINAL CTA SECTION ========== */
+
+.recruit-final-cta {
+  padding: 6rem 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.recruit-cta-heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--recruit-text-primary);
+}
+
+.recruit-cta-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--recruit-text-secondary);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 768px) {
+  .recruit-hero {
+    min-height: 85vh;
+    padding: 5rem 1rem 3rem;
+  }
+
+  .recruit-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .recruit-btn {
+    justify-content: center;
+  }
+
+  .recruit-intro-section,
+  .recruit-stats-section,
+  .recruit-departments-section,
+  .recruit-agenda-section,
+  .recruit-final-cta {
+    padding: 4rem 1rem;
+  }
+
+  .recruit-status-section {
+    margin: 4rem 1rem;
+    padding: 2rem;
+  }
+
+  .recruit-stats-container {
+    gap: 2rem 1.5rem;
+  }
+
+  .recruit-timeline-card {
+    max-width: 100%;
+  }
+
+  .recruit-intro-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruit-hero {
+    min-height: auto;
+    padding: 4rem 1rem 2rem;
+  }
+
+  .recruit-hero-heading {
+    font-size: 1.75rem;
+  }
+
+  .recruit-hero-description {
+    font-size: 1rem;
+  }
+
+  .recruit-badge {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.25rem;
+  }
+
+  .recruit-btn {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .recruit-section-heading {
+    font-size: 1.5rem;
+  }
+
+  .recruit-stat-value {
+    font-size: 2rem;
+  }
+
+  .recruit-departments-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .recruit-card-title {
+    font-size: 1.25rem;
+  }
+
+  .recruit-status-section {
+    margin: 3rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .recruit-status-indicators {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .recruit-final-cta {
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .recruit-cta-heading {
+    font-size: 1.5rem;
+  }
+
+  .recruit-cta-description {
+    font-size: 1rem;
+  }
+}
+
+/* ========== ACCESSIBILITY ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  .recruit-btn,
+  .recruit-highlight-item,
+  .recruit-role-item,
+  .recruit-card-icon,
+  .recruit-timeline-card,
+  .recruit-badge-icon,
+  .recruit-department-card {
+    transition: none;
+    animation: none;
+  }
+
+  .recruit-btn:hover {
+    transform: none;
+  }
+
+  .recruit-highlight-item:hover {
+    transform: none;
+  }
+
+  .recruit-timeline-card:hover {
+    transform: none;
+  }
+}
+
+/* ========== GLASS EFFECT ========== */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+}
+
+/* ========== UTILITY ========== */
+
+@supports not (-webkit-backdrop-filter: blur(1px)) {
+  .recruit-timeline-card,
+  .recruit-department-card,
+  .recruit-status-section {
+    background: var(--recruit-surface-secondary) !important;
+  }
+}
